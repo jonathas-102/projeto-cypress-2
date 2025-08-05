@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^14.2.1",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "wait-on": "^8.0.4"
   },
   "dependencies": {
     "aggregate-error": "^3.1.0",
