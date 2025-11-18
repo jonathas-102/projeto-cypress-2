@@ -2,19 +2,21 @@ describe('Acessando a página do Flits', () => {
     it('Deve visitar a página do Flits', () => {
       cy.visit('http://10.10.50.48:3102/');
   
-      cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('teste.e2e');
-      cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Abcd1234!');
-      cy.get('.ant-form-item-control-input-content > .ant-btn').click();
-      cy.wait(4000);
+     cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('jonathas.nascimento');
+     cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');
+     cy.get('.ant-form-item-control-input-content > .ant-btn').click();
+     cy.wait(8000);
+     cy.get('.ant-modal-footer > :nth-child(2)').click();
+     cy.get('#rcc-confirm-button').click();
+     cy.wait(4000);
+
+     //Seleciona um item do menu
   
-      cy.get('.ant-modal-footer > .ant-btn').click();
-      cy.get('#rcc-confirm-button').click();
-      cy.get(':nth-child(1) > .ant-menu-submenu-title').click();
-      cy.get('[data-testid="0109"] > .sc-fneYkE').click();
-      cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
+     cy.get('[data-testid="01"] > .sc-iAUPGz').click();
+     cy.get('[data-testid="0109"] > .sc-iAUPGz > .title').click();
 
      // Define as opções específicas a serem selecionadas
-      //Se algum valor de texto ou valor de backend mudar no futuro, o teste irá falhar, indicando que há uma discrepância, ajudando na manutenção e atualização do sistema.
+     //Se algum valor de texto ou valor de backend mudar no futuro, o teste irá falhar, indicando que há uma discrepância, ajudando na manutenção e atualização do sistema.
      const optionsToSelect = [
         '100 - Especial Funcionário',
         '103P.O - Parada Operacional',
@@ -54,65 +56,34 @@ describe('Acessando a página do Flits', () => {
       cy.get('[data-testid="CheckboxNull-active"]').click({ force: true });
       cy.get('[data-testid="button-submit"]').click({ force: true });
       cy.wait(5000);
+
+      
       cy.get('[data-testid="button-reset"]').click({ force: true });
-      cy.get('.sc-guGTOK').click({ force: true });
       cy.get('.anticon-file-pdf').click({ force: true });
       cy.wait(5000);
       cy.get('.anticon-file-excel').click({ force: true });
       cy.wait(5000);
 
-      cy.get('.ant-pagination-item-2 > a').click({ force: true });
-      cy.get('.ant-pagination-options > .ant-select > .ant-select-selector > .ant-select-selection-wrap > .ant-select-selection-item').click({ force: true });
-      cy.get('#rc_select_4_list_0 > .ant-select-item-option-content').click({ force: true });
-      cy.get('#rc_select_4_list_1 > .ant-select-item-option-content').click({ force: true });
-      cy.get('#rc_select_4_list_2 > .ant-select-item-option-content').click({ force: true });
+      //Incluir 
 
-     // Abre modal de edição (1º calendário)
-     cy.get('[data-row-key="637076"] [data-cy="edit-action-0"]')
-     .should('be.visible')
-     .click({ force: true });
+      cy.get('.ant-btn-text').click();
+      cy.wait(4000);
+      cy.get('[data-cy="btn-form-add"]').click({ force: true });
+      cy.get('[data-testid="Input-code"]').type('U579T57');
+      cy.get('#rc_select_8').click({ force: true });
+      cy.get('.ant-select-item-option-active > .ant-select-item-option-content > div > :nth-child(1)').click({ force: true });
+      cy.get('#rc_select_9').click({ force: true });
+      cy.get('[data-testid="Input-goal"]').type('E2E Cypress');
 
-     // Aguarda o campo de data de início estar disponível
-     cy.get('[data-cy="form-item-startDate"] .ant-picker')
-     .should('be.visible')
-     .click({ force: true });
+      //Data 
 
-     // Seleciona a data de início
-     cy.get('[title="2025-04-29"]')
-     .should('be.visible')
-     .click({ force: true });
+      cy.get('[data-cy="InputDate-startDate"]').type('04/09/2025', { force: true });
+      cy.get('[data-cy="InputDate-endDate"]').type('30/09/2025', { force: true });
+      cy.get('[data-testid="InputNumber-interval"]').type('61');
+      cy.get('[data-testid="button-cancel"]').click({ force: true });
+      cy.wait(5000);
 
-     // Abre o calendário do campo de data final
-     cy.get('[data-cy="form-item-endDate"] .ant-picker')
-     .should('be.visible')
-     .click({ force: true });
 
-     // Seleciona a data de fim
-     cy.get('[data-cy="InputDate-endDate"]').click({ force: true });
-     cy.get(':nth-child(10) > .ant-picker-dropdown > .ant-picker-panel-container > .ant-picker-panel-layout > :nth-child(1) > .ant-picker-panel > .ant-picker-date-panel > .ant-picker-body > .ant-picker-content > tbody > :nth-child(2) > [title="2025-05-07"]').click({ force: true });
-
-     cy.get('[data-testid="InputNumber-interval"]').type('60', { force: true });
-     cy.get('[data-testid="Custom-calculateInterval"]').click({ force: true }); 
-     cy.get('[data-testid="Custom-intervalPerTrack"]').click({ force: true });
-     cy.wait(4000); 
-     cy.get(':nth-child(1) > [data-testid="RangeTimePicker-timeBand"]').click({ force: true });
-     cy.get(':nth-child(1) > [data-testid="RangeTimePicker-timeBand"]').type('00:00', { force: true });
-     cy.get('.ant-picker-ok > .ant-btn').click({ force: true });
-     cy.wait(4000);
-     cy.get(':nth-child(3) > [data-testid="RangeTimePicker-timeBand"]').type('12:00', { force: true });
-     cy.get('.ant-picker-ok > .ant-btn').click({ force: true });
-     cy.wait(4000);
-     cy.get('.ant-col-4 > .ant-form-item > [data-cy="form-item-interval"] > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-number > .ant-input-number-input-wrap > [data-testid="InputNumber-interval"]').type('60', { force: true });
-     cy.get('.ant-btn-icon-only').click({ force: true });
-     cy.get('[data-testid="Custom-addbutton"] > :nth-child(2)').click({ force: true });
-     cy.wait(4000);
-     cy.get('.sc-lfDbuM > .sc-dCVDEO > .ant-form > .row-btns > .ant-col > div > [data-testid="button-cancel"] > :nth-child(2)').click({ force: true });
-     cy.wait(4000);
-     cy.get('[data-testid="button-cancel"]').click({ force: true });
-     cy.wait(4000);
-      
-
-    
 
         
     });  

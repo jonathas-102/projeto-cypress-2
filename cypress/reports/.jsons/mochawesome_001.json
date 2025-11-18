@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T16:58:23.390Z",
+    "end": "2025-09-04T16:58:31.944Z",
+    "duration": 8554,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "23e9bd6a-343f-47f4-b15a-f5f0f5421187",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Flits Urbano - Login e Dashboard\\Login Incorreto.cy.js",
+      "file": "cypress\\e2e\\Flits Urbano - Login e Dashboard\\Login Incorreto.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7a36e1d6-8b1f-47c0-b1d7-be666274c5e4",
+          "title": "Acessando a página do Flits",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve visitar a página do Flits",
+              "fullTitle": "Acessando a página do Flits Deve visitar a página do Flits",
+              "timedOut": null,
+              "duration": 6567,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\Flits Urbano - Login e Dashboard\\\\Login Incorreto.cy.js\"\n}",
+              "code": "// Ignora a exceção esperada\nCypress.on('uncaught:exception', err => {\n  if (err.message.includes('invalid_authenticate')) return false;\n});\ncy.visit('http://10.10.50.48:3102/');\n// Preenche com dados inválidos\ncy.get('[data-cy=\"form-item-username\"] input').type('jonathas');\ncy.get('[data-cy=\"form-item-password\"] input').type('20252025@Mtzero');\ncy.get('.ant-form-item-control-input-content > .ant-btn').click();\n// Aguarda a notificação e fecha pelo \"X\"\ncy.get('.ant-notification-notice-close').click();",
+              "err": {},
+              "uuid": "74984192-ed51-4d26-a675-c8196988c6a7",
+              "parentUUID": "7a36e1d6-8b1f-47c0-b1d7-be666274c5e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "74984192-ed51-4d26-a675-c8196988c6a7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6567,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório E2E",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

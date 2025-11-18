@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-09-04T17:04:11.939Z",
+    "end": "2025-09-04T17:04:20.040Z",
+    "duration": 8101,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2630d8b0-752f-48b8-8a53-2273129b90a6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Menu - 07 Relatório\\0706 - Quilometragem.cy.js",
+      "file": "cypress\\e2e\\Menu - 07 Relatório\\0706 - Quilometragem.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "85f05294-c96b-4c26-a50b-d2654411f985",
+          "title": "Acessando a página do Flits",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve visitar a página do Flits",
+              "fullTitle": "Acessando a página do Flits Deve visitar a página do Flits",
+              "timedOut": null,
+              "duration": 6682,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Menu - 07 Relatório\\\\0706 - Quilometragem.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\Menu - 07 Relatório\\\\0706 - Quilometragem.cy.js\\\\Acessando a página do Flits -- Deve visitar a página do Flits (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('http://10.10.50.48:3102/');\ncy.get('[data-cy=\"form-item-username\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('teste.e2e');\ncy.get('[data-cy=\"form-item-password\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Abcd1234!');\ncy.get('.ant-form-item-control-input-content > .ant-btn').click();\ncy.wait(4000);\ncy.get('.ant-modal-footer > .ant-btn').click();\ncy.get('#rcc-confirm-button').click();\n// Clica no menu cadastro\ncy.get(':nth-child(5) > .ant-menu-submenu-title').click();\n// Clica no sub menu Escala Padrão\ncy.contains('Quilometragem').click({\n  force: true\n});\ncy.get('.ant-col > .ant-btn').click({\n  force: true\n});\ncy.wait(4000);\ncy.get('[data-testid=\"button-reset\"]').click({\n  force: true\n});\ncy.get('[data-testid=\"button-submit\"]').click({\n  force: true\n});\n// Pesquisa e limpa o campo de pesquisa",
+              "err": {
+                "message": "CypressError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > invalid_authenticate\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "CypressError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > invalid_authenticate\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\nError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > invalid_authenticate\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\nAxiosError: Request failed with status code 400\n    at Et (http://10.10.50.48:3102/static/js/7674.b0f5c5d0.chunk.js:2:815662)\n    at XMLHttpRequest.v (http://10.10.50.48:3102/static/js/7674.b0f5c5d0.chunk.js:2:820240)",
+                "diff": null
+              },
+              "uuid": "50c74ced-cd7c-4e7d-a73c-7c85a5e4a86e",
+              "parentUUID": "85f05294-c96b-4c26-a50b-d2654411f985",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "50c74ced-cd7c-4e7d-a73c-7c85a5e4a86e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6682,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório E2E",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

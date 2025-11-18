@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T16:58:45.921Z",
+    "end": "2025-09-04T16:59:45.531Z",
+    "duration": 59610,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bbe80c1f-ff8a-4e21-9795-eaa0472eb9e8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Menu - 01 Cadastro\\0109 - Quadro Horário.cy.js",
+      "file": "cypress\\e2e\\Menu - 01 Cadastro\\0109 - Quadro Horário.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "74ccc348-aad8-4152-af83-94932cbc78d9",
+          "title": "Acessando a página do Flits",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve visitar a página do Flits",
+              "fullTitle": "Acessando a página do Flits Deve visitar a página do Flits",
+              "timedOut": null,
+              "duration": 57877,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\Menu - 01 Cadastro\\\\0109 - Quadro Horário.cy.js\"\n}",
+              "code": "cy.visit('http://10.10.50.48:3102/');\ncy.get('[data-cy=\"form-item-username\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('jonathas.nascimento');\ncy.get('[data-cy=\"form-item-password\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');\ncy.get('.ant-form-item-control-input-content > .ant-btn').click();\ncy.wait(8000);\ncy.get('.ant-modal-footer > :nth-child(2)').click();\ncy.get('#rcc-confirm-button').click();\ncy.get('[data-testid=\"01\"] > .sc-eEhoOH').click();\ncy.get('[data-testid=\"0109\"] > .sc-eEhoOH > .title').click();\n// Define as opções específicas a serem selecionadas\n//Se algum valor de texto ou valor de backend mudar no futuro, o teste irá falhar, indicando que há uma discrepância, ajudando na manutenção e atualização do sistema.\nconst optionsToSelect = ['100 - Especial Funcionário', '103P.O - Parada Operacional', '180 - Osasco (Jardim 1º de Maio) / São Paulo (Lapa)', '181 - Carapicuíba (Pq. Santa Teresa) / São Paulo (Lapa)', '244 - Osasco (Centro) / Cotia (Rod. Raposo Tavares, Km 21)', '263 - Carapicuíba (Novo Horizonte) / Osasco (Vila Yara)', '404 - Osasco (Novo Osasco) / São Paulo (Metrô Vila Sônia)', '466EX1 - Osasco (Terminal Santa Maria) / Barueri (Alphaville/Green Valley) via Veloso', '466EX2 - Osasco (Santa Maria) / Barueri (Alphaville/Green Valley) via (Bradesco Cidade de Deus)', '466TRO - Osasco(Conjunto dos Metalurgicos)Barueri(Alphaville/Green Valley)', '479 - Carapicuíba (Pq. Santa Teresa) / Osasco (Centro)', '496 - São Paulo (Jd. João XXIII) / Barueri (Alphaville / Green Valley)', '496EX1 - São Paulo (Rodovia Raposo Tavares - KM 17,8) - Barueri (Alphaville/Green Valley)', '496VP1 - São Paulo (Raposo Tavares Km 17,8) / Barueri (Alphaville / Green Valley)', '572 - Osasco (Jd. Santa Maria) / São Paulo (Metrô Morumbi)', '579 - Osasco (Vila Yolanda) / Barueri (Alphaville / Green Valley)', '835 - São Paulo (Metrô Vila Sonia) / Barueri (Alphaville / Green Valley)', 'I - 059PR1 - Carapicuíba (Jd Novo Horizonte) / São Paulo (Metrô Butantã)', 'I - 060BI1 - Osasco (Jd. Santa Maria) / SP (Metrô Butantã)', 'I - 180DV1 - Osasco (1º de Maio) via Jd. Conceição / SP (Lapa)', 'I - 180DV2 - Osasco (1º de Maio) Via Jd. Paulista / SP (Lapa)', 'I - 244BI1 - Osasco (Vila Yara) / Cotia (Rod. Raposo Tavares, Km 21)', 'I - 244VP1 - Osasco (Cidade de Deus) / Cotia (Rod. Raposo Tavares, Km 21)', 'I - 466 - Osasco (Jd. Santa Maria) / Barueri (Alphaville III)', 'I - 466VP1 - Osasco (Cj. dos Metalúrgicos) / Barueri (Alphaville III)'];\ncy.get('[data-testid=\"Select-typeDay\"] > .ant-select-selector').click({\n  force: true\n});\ncy.get('[label=\"Sábado\"] > .ant-select-item-option-content > div').click({\n  force: true\n});\ncy.get('[label=\"Domingo\"] > .ant-select-item-option-content > div').click({\n  force: true\n});\ncy.get('[label=\"Feriado\"] > .ant-select-item-option-content > div').click({\n  force: true\n});\ncy.get('[label=\"Útil\"] > .ant-select-item-option-content > div').click({\n  force: true\n});\ncy.get('[data-testid=\"Input-code\"]').type('U579TRO057');\ncy.get('[data-testid=\"Input-goal\"]').type('U579TRO057 - 31/05/2023');\ncy.get('[data-testid=\"CheckboxNull-active\"]').click({\n  force: true\n});\ncy.get('[data-testid=\"CheckboxNull-active\"]').click({\n  force: true\n});\ncy.get('[data-testid=\"button-submit\"]').click({\n  force: true\n});\ncy.wait(5000);\ncy.get('[data-testid=\"button-reset\"]').click({\n  force: true\n});\ncy.get('.anticon-file-pdf').click({\n  force: true\n});\ncy.wait(5000);\ncy.get('.anticon-file-excel').click({\n  force: true\n});\ncy.wait(5000);\ncy.get('.ant-pagination-item-2 > a').click({\n  force: true\n});\ncy.get('.ant-pagination-options > .ant-select > .ant-select-selector > .ant-select-selection-wrap > .ant-select-selection-item').click({\n  force: true\n});\ncy.get('#rc_select_4_list_0 > .ant-select-item-option-content').click({\n  force: true\n});\ncy.get('#rc_select_4_list_1 > .ant-select-item-option-content').click({\n  force: true\n});\ncy.get('#rc_select_4_list_2 > .ant-select-item-option-content').click({\n  force: true\n});\ncy.wait(5000);\ncy.get('#rc_select_2').type('10010 - Paese');\ncy.get('[style=\"height: 32px; position: relative; overflow: hidden;\"] > .rc-virtual-list-holder-inner > .ant-select-item > .ant-select-item-option-content > div').click({\n  force: true\n});\n//Incluir\ncy.get('.ant-btn-text').click();\ncy.wait(4000);\ncy.get('[data-cy=\"btn-form-add\"]').click({\n  force: true\n});\ncy.get('[data-testid=\"Input-code\"]').type('U579T57');\ncy.get('#rc_select_5').click({\n  force: true\n});\ncy.get('.ant-select-item-option-active > .ant-select-item-option-content > div > :nth-child(1)').click({\n  force: true\n});\ncy.get('#rc_select_6').click({\n  force: true\n});\ncy.get(':nth-child(10) > .ant-select-dropdown > :nth-child(1) > :nth-child(1) > .rc-virtual-list > .rc-virtual-list-holder > :nth-child(1) > .rc-virtual-list-holder-inner > .ant-select-item-option-active > .ant-select-item-option-content > div').click({\n  force: true\n});\ncy.get('[data-testid=\"Input-goal\"]').type('E2E Cypress');\n//Data \ncy.get('[data-cy=\"InputDate-startDate\"]').type('04/09/2025', {\n  force: true\n});\ncy.get('[data-cy=\"InputDate-endDate\"]').type('30/09/2025', {\n  force: true\n});\ncy.get('[data-testid=\"InputNumber-interval\"]').type('61');\ncy.get('[data-testid=\"button-cancel\"]').click({\n  force: true\n});\ncy.wait(5000);",
+              "err": {},
+              "uuid": "33e1f160-bd3b-47f9-a534-f575fc0ff9b0",
+              "parentUUID": "74ccc348-aad8-4152-af83-94932cbc78d9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "33e1f160-bd3b-47f9-a534-f575fc0ff9b0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 57877,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório E2E",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

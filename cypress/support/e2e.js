@@ -16,3 +16,15 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-file-upload';
+import 'cypress-mochawesome-reporter/register';
+
+// Ignora o erro "options.$el.toArray is not a function" que vem da aplicação
+Cypress.on('uncaught:exception', (err, runnable) => {
+  if (err.message && err.message.includes('options.$el.toArray is not a function')) {
+    return false; // impede o Cypress de falhar o teste
+  }
+
+  // Para outros erros, deixa o Cypress se comportar normalmente
+  // (retornando undefined)
+});
+

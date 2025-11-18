@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-09-04T17:08:56.787Z",
+    "end": "2025-09-04T17:09:13.847Z",
+    "duration": 17060,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "75f30d3d-0c1c-4f1f-b364-8fcab674e4b5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\teste\\teste comunicado.cy.js",
+      "file": "cypress\\e2e\\teste\\teste comunicado.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da93e20f-0fcc-4821-815a-23f9275b38a3",
+          "title": "Acessando a página do Flits",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve visitar a página do Flits",
+              "fullTitle": "Acessando a página do Flits Deve visitar a página do Flits",
+              "timedOut": null,
+              "duration": 14674,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\teste\\\\teste comunicado.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\teste\\\\teste comunicado.cy.js\\\\Acessando a página do Flits -- Deve visitar a página do Flits (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('https://flits.cittati.com.br/login');\ncy.get('[data-cy=\"form-item-username\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Jonathas.nascimento');\ncy.get('[data-cy=\"form-item-password\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');\ncy.get('.ant-form-item-control-input-content > .ant-btn').click();\ncy.wait(4000);\ncy.get('.ant-modal-footer > :nth-child(2)').click();\ncy.get(':nth-child(10) > .ant-menu-submenu-title').click({\n  force: true\n});\n//sub menu mensagem institucional\ncy.get('[data-testid=\"1301\"] > .sc-gJUwzu').click({\n  force: true\n});\ncy.get('[data-cy=\"btn-form-add\"]').click({\n  force: true\n});\ncy.get('[data-cy=\"form-item-startDateValidity\"] .ant-picker').click();\n// Digita a data desejada no formato aceito (por exemplo, \"26/06/2025\")\ncy.get('[data-cy=\"form-item-startDateValidity\"] input').clear().type('26/06/2025{enter}');\n// Clica no campo de data final para ativar o input\ncy.get('[data-cy=\"form-item-endDateValidity\"] .ant-picker').click();\n// Digita a data final no formato esperado (por exemplo, \"30/06/2025\")\ncy.get('[data-cy=\"form-item-endDateValidity\"] input').clear().type('30/06/2025{enter}');\ncy.get('[data-testid=\"Input-title\"]').type('Teste de comunicado', {\n  force: true\n});\ncy.get('[data-testid=\"TextArea-text\"]').type('Este é um teste de comunicado para verificar a funcionalidade de criação de mensagens institucionais no sistema.', {\n  force: true\n});\ncy.get('[data-testid=\"Select-roles\"] > .ant-select-selector').click({\n  force: true\n});\ncy.get('[label=\"Cobrador\"]').click({\n  force: true\n});\n// Abre o dropdown\ncy.get('[data-testid=\"MultiSelectAntd-employees\"] .ant-select-selector').click({\n  force: true\n});\n// Aguarda o dropdown visível\ncy.get('.ant-select-dropdown').should('be.visible');\n// Clica no item com o texto\ncy.get('.ant-select-dropdown .ant-select-item-option-content').contains('Jonathas_123').click({\n  force: true\n});\ncy.get('.sc-igsPkr > .ant-btn').click({\n  force: true\n});\ncy.get('[data-testid=\"button-submit\"]').click({\n  force: true\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.ant-modal-footer > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.ant-modal-footer > :nth-child(2)`, but never found it.\n    at Context.eval (webpack://projeto-cypress-2.0/./cypress/e2e/teste/teste comunicado.cy.js:10:7)",
+                "diff": null
+              },
+              "uuid": "eaf9af99-7e74-4d48-80d3-83b586fd10bd",
+              "parentUUID": "da93e20f-0fcc-4821-815a-23f9275b38a3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "eaf9af99-7e74-4d48-80d3-83b586fd10bd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14674,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório E2E",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

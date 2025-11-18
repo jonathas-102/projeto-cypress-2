@@ -2,13 +2,13 @@ describe('Acessando a página do Flits', () => {
     it('Deve visitar a página do Flits', () => {
       cy.visit('http://10.10.50.48:3102/');
   
-      cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('teste.e2e');
-      cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Abcd1234!');
-      cy.get('.ant-form-item-control-input-content > .ant-btn').click();
-      cy.wait(4000);
-  
-      cy.get('.ant-modal-footer > .ant-btn').click();
-      cy.get('#rcc-confirm-button').click();
+     cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('jonathas.nascimento');
+     cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');
+     cy.get('.ant-form-item-control-input-content > .ant-btn').click();
+     cy.wait(8000);
+     cy.get('.ant-modal-footer > :nth-child(2)').click();
+     cy.get('#rcc-confirm-button').click();
+     cy.wait(4000);
 
       // Clica no menu cadastro
 
@@ -19,17 +19,17 @@ describe('Acessando a página do Flits', () => {
       cy.contains('Perfil Usuário').click({ force: true });
       cy.get('.ant-col > .ant-btn').click({ force: true });
       cy.wait(4000);
-      cy.get('[data-testid="button-reset"]').click({ force: true });
-      cy.get('[data-testid="button-submit"]').click({ force: true });
-
+      
       // Pesquisa e limpa o campo de pesquisa
 
+      cy.get('#rc_select_5').click({ force: true });
       cy.get('[data-testid="Select-context"] > .ant-select-selector').click({ force: true });
-      cy.get('[label="Cittati"]').click({ force: true });
+      cy.get('[label="ABC - Escolar Bananal"]').click({ force: true });
+      cy.wait(8000);
       cy.get('[data-testid="Input-name"]').type('Coordenador', { force: true });
       cy.get('[data-testid="Cascader-functionalities"] > .ant-select-selector').click({ force: true });
       cy.get('[data-testid="Select-appId"] > .ant-select-selector').click({ force: true });
-      cy.get('[label="Auttran"]').click({ force: true });
+      cy.get('[label="Autopass"]').click({ force: true });
       cy.get('[data-testid="button-submit"]').click({ force: true });
       cy.wait(3000);
       cy.get('[data-testid="button-reset"]').click({ force: true });
@@ -47,7 +47,7 @@ describe('Acessando a página do Flits', () => {
       cy.get('[data-testid="Select-profileVisibilityId"] > .ant-select-selector').click({ force: true });
       cy.get('[label="Fiscal"] > .ant-select-item-option-content > div').click({ force: true });
       cy.get('[data-testid="Select-mirrorProfile"] > .ant-select-selector').click({ force: true });
-      cy.get('[label="Cgate"] > .ant-select-item-option-content > div').click({ force: true });
+      cy.get('[label="AcessoFull"] > .ant-select-item-option-content > div').click({ force: true });
       cy.wait(4000);
       cy.get('[data-testid="button-submit"]').click({ force: true });
 

@@ -2,13 +2,13 @@ describe('Acessando a página do Flits', () => {
     it('Deve visitar a página do Flits', () => {
       cy.visit('http://10.10.50.48:3102/');
   
-      cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('teste.e2e');
-      cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Abcd1234!');
-      cy.get('.ant-form-item-control-input-content > .ant-btn').click();
-      cy.wait(4000);
-  
-      cy.get('.ant-modal-footer > .ant-btn').click();
-      cy.get('#rcc-confirm-button').click();
+     cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('jonathas.nascimento');
+     cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');
+     cy.get('.ant-form-item-control-input-content > .ant-btn').click();
+     cy.wait(8000);
+     cy.get('.ant-modal-footer > :nth-child(2)').click();
+     cy.wait(4000);
+     cy.get('#rcc-confirm-button').click();
 
       // Clica no menu cadastro
 
@@ -25,10 +25,10 @@ describe('Acessando a página do Flits', () => {
       cy.get('[data-cy="btn-form-add"]').click({ force: true });
       cy.get('[data-testid="Select-type"] > .ant-select-selector').click({ force: true });
       cy.contains('Normal').click({ force: true });
-      cy.wait(4000);
+      cy.wait(6000);
       cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
-      cy.wait(2000);
-      cy.contains('059 - Osasco (Conj. dos Metalúrgicos) / São Paulo (Metrô Butantã)').click({ force: true });
+      cy.wait(4000);
+      cy.contains('10010 - Paese').click({ force: true });
       cy.get('[data-testid="Input-name"]').type('Testador 1', { force: true });
       cy.get('[data-testid="Input-returnName"]').type('Teste E2E Atendimento', { force: true });
       cy.get('[data-testid="Input-identifier"]').type('Teste E2E Atendimento', { force: true });
@@ -40,12 +40,12 @@ describe('Acessando a página do Flits', () => {
       // Testa botão pesquisar e limpar
 
       cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
-      cy.contains('059 - Osasco (Conj. dos Metalúrgicos) / São Paulo (Metrô Butantã)').click({ force: true });
-      cy.wait(2000);
+      cy.contains('10010 - Paese').click({ force: true });
+      cy.wait(4000);
       cy.get('[data-testid="Select-draft"] > .ant-select-selector').click({ force: true });
       cy.get('[label="Não"] > .ant-select-item-option-content > div').click({ force: true });
       cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
-      cy.wait(2000);
+      cy.wait(4000);
       cy.get('[data-testid="Select-main"] > .ant-select-selector').click({ force: true });
       cy.get(':nth-child(11) > .ant-select-dropdown > :nth-child(1) > :nth-child(1) > .rc-virtual-list > .rc-virtual-list-holder > :nth-child(1) > .rc-virtual-list-holder-inner > .ant-select-item-option-active > .ant-select-item-option-content > div').click({ force: true });
       cy.get('[data-testid="CheckboxNull-active"]').click({ force: true });
@@ -60,11 +60,8 @@ describe('Acessando a página do Flits', () => {
       cy.wait(4000);
       cy.get('.anticon-file-excel').click({ force: true });
       cy.wait(4000);
-      cy.get('.anticon-more').click({ force: true });
-      cy.get('.sc-gAqISa > :nth-child(1)').click({ force: true });
-      cy.wait(4000);
 
-      cy.get('[data-testid="button-submit"]').click({ force: true });
+      cy.get('[data-testid="button-reset"]').click({ force: true });
       cy.wait(2000);
 
 

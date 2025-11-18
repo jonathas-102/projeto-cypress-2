@@ -1,60 +1,67 @@
+// cypress/e2e/Menu - 03+Monitoramento/0305 - Gestão Operacional.cy.js
+
 describe('Acessando a página do Flits', () => {
-    it('Deve visitar a página do Flits', () => {
-      cy.visit('http://10.10.50.48:3102/');
-  
-      cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('teste.e2e');
-      cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Abcd1234!');
-      cy.get('.ant-form-item-control-input-content > .ant-btn').click();
-      cy.wait(4000);
-  
-      cy.get('.ant-modal-footer > .ant-btn').click();
-      cy.get('#rcc-confirm-button').click();
+  it('Deve visitar a página do Flits', () => {
 
-      // Clica no menu cadastro
+    // Acessa a URL principal
+    cy.visit('http://10.10.50.48:3102/');
 
-      cy.get(':nth-child(4) > .ant-menu-submenu-title').click();
+    // Faz login
+    cy.get('[data-cy="form-item-username"] .ant-input')
+      .type('jonathas.nascimento');
+    cy.get('[data-cy="form-item-password"] .ant-input')
+      .type('20252025@Mtzero');
+    cy.get('.ant-form-item-control-input-content > .ant-btn')
+      .click();
 
-      // Clica no sub menu Escala Padrão
+    // Espera o sistema carregar e fecha os modais iniciais
+    cy.wait(8000);
+    cy.get('.ant-modal-footer > :nth-child(2)').click();
+    cy.wait(4000);
+    cy.get('#rcc-confirm-button').click();
 
-      cy.contains('Gestão Operacional').click({ force: true });
-      cy.get('.ant-col > .ant-btn').click({ force: true });
-      cy.wait(4000);
-      cy.get('[data-testid="button-submit"]').click({ force: true });
-      cy.get('[data-testid="main-button"]').click({ force: true });
-      cy.get('[data-testid="action-button-1"]').click({ force: true });
+    // Abre o menu "Cadastro"
+    cy.get(':nth-child(4) > .ant-menu-submenu-title').click();
 
-      // Incluir escala
+    // Clica no submenu "Gestão Operacional"
+    cy.contains('Gestão Operacional').click({ force: true });
 
-      cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
-      cy.contains('059 - Osasco (Conj. dos Metalúrgicos) / São Paulo (Metrô Butantã)').click({ force: true });
-      cy.wait(2000);
-      cy.get('[data-testid="Select-typeDay"] > .ant-select-selector').click({ force: true });
-      cy.contains('Útil').click({ force: true });
-      cy.get('[data-testid="Select-timeTableId"] > .ant-select-selector').click({ force: true });
-      cy.contains('U059TRO017').click({ force: true });
+    // Clica no botão de pesquisa / consulta
+    cy.get('.ant-col > .ant-btn').click({ force: true });
+    cy.wait(4000);
 
-      // Botão Cancelar
+    // Clica no botão de salvar / confirmar
+    cy.get('[data-testid="button-submit"] > :nth-child(2)')
+      .click({ force: true });
+    cy.wait(4000);
 
-      cy.get('[data-testid="button-cancel"]').click({ force: true });
+    // === INCLUIR ESCALA ===
+   // pega todos os botões flutuantes visíveis e clica no do meio
+    cy.get('.ant-float-btn:visible')
+     .eq(0)                // 0 = cima, 1 = meio, 2 = baixo
+     .click();
 
-      // Pesquisar por linha - Posição, Atividade..
+     // Espera o popover aparecer (é injetado no <body>)
+     cy.get('body .ant-popover').should('be.visible');
 
-      //cy.get('[data-cy="form-item-route"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .content-row > .ant-input-affix-wrapper').type('059', { force: true });
-      //cy.get('[data-cy="form-item-position"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .content-row > .ant-input-affix-wrapper').type('22', { force: true });
-      
+     // Clica no item "Incluir escala" dentro do popover
+     cy.get('body .ant-popover .ant-menu-title-content')
+     .contains(/incluir escala/i)
+     .click();
+
+     cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
+     cy.get('.ant-select-item-option-active > .ant-select-item-option-content > div > :nth-child(1)').click({ force: true });
+
+     // Seleciona o tipo de dia
+
+     cy.get('[data-testid="Select-typeDay"] > .ant-select-selector > .ant-select-selection-wrap > .ant-select-selection-search').click({ force: true });
+     cy.contains('Útil').click({ force: true });
+
+     //Quadro horario não possui
 
 
+     cy.get('[data-testid="button-cancel"]').click({ force: true });
+     cy.wait(4000);
 
-
-      
-
-
-
-
-
-      
-
-        
-    });
-    
+  });
 });

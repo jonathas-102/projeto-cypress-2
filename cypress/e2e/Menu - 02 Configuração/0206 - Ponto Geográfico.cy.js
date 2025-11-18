@@ -2,13 +2,13 @@ describe('Acessando a página do Flits', () => {
     it('Deve visitar a página do Flits', () => {
       cy.visit('http://10.10.50.48:3102/');
   
-      cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('teste.e2e');
-      cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('Abcd1234!');
-      cy.get('.ant-form-item-control-input-content > .ant-btn').click();
-      cy.wait(4000);
-  
-      cy.get('.ant-modal-footer > .ant-btn').click();
-      cy.get('#rcc-confirm-button').click();
+     cy.get('[data-cy="form-item-username"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('jonathas.nascimento');
+     cy.get('[data-cy="form-item-password"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');
+     cy.get('.ant-form-item-control-input-content > .ant-btn').click();
+     cy.wait(8000);
+     cy.get('.ant-modal-footer > :nth-child(2)').click();
+     cy.wait(4000);
+     cy.get('#rcc-confirm-button').click();
 
       // Clica no menu cadastro
 
@@ -23,12 +23,13 @@ describe('Acessando a página do Flits', () => {
       // Empresa
 
       cy.get('[data-testid="Select-companyId"] > .ant-select-selector').click({ force: true });
-      cy.get('[label="Osasco Matriz Intermunicipal"] > .ant-select-item-option-content > div').click({ force: true });
+      cy.get('[label="MobiBrasil SP (Jonathas)"] > .ant-select-item-option-content > div').click({ force: true });
 
       // Linha
 
       cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
-      cy.get('[style="height: 928px; position: relative; overflow: hidden;"] > .rc-virtual-list-holder-inner > .ant-select-item-option-active > .ant-select-item-option-content > div > :nth-child(1)').click({ force: true });
+      cy.contains('10010 / Paese').click({ force: true });
+      cy.wait(4000);
 
       // Código
 

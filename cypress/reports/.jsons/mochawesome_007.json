@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-09-04T17:01:54.973Z",
+    "end": "2025-09-04T17:02:12.059Z",
+    "duration": 17086,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d20bd6c0-86b4-4acf-8a4d-e5a0da53c682",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Menu - 01 Cadastro\\0113 - Grupo Linha.cy.js",
+      "file": "cypress\\e2e\\Menu - 01 Cadastro\\0113 - Grupo Linha.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c2f6ff81-8e70-417d-be1c-7269d3f9adbc",
+          "title": "Acessando a página do Flits",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve visitar a página do Flits",
+              "fullTitle": "Acessando a página do Flits Deve visitar a página do Flits",
+              "timedOut": null,
+              "duration": 14427,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\Menu - 01 Cadastro\\\\0113 - Grupo Linha.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\Menu - 01 Cadastro\\\\0113 - Grupo Linha.cy.js\\\\Acessando a página do Flits -- Deve visitar a página do Flits (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('http://10.10.50.48:3101/');\ncy.get('[data-cy=\"form-item-username\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('jonathas.nascimento');\ncy.get('[data-cy=\"form-item-password\"] > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-affix-wrapper > .ant-input').type('20252025@Mtzero');\ncy.get('.ant-form-item-control-input-content > .ant-btn').click();\ncy.wait(4000);\ncy.get('.ant-modal-footer > :nth-child(2)').click();\n//clica no menu cadastro\ncy.get('[data-testid=\"01\"] > .sc-eEhoOH').click();\ncy.wait(4000);\n// sub menu grupo linha\ncy.get('[data-testid=\"0105\"] > .sc-eEhoOH > .title').click();\n// Incluir novo grupo linha\ncy.get('[data-cy=\"btn-form-add\"]').click({\n  force: true\n});\n// Insere uma descrição\ncy.get('[data-testid=\"Input-description\"]').type('Execução automática de testes E2E do fluxo cadastro', {\n  force: true\n});\ncy.wait(4000);\ncy.get('[data-testid=\"Select-groupType\"] > .ant-select-selector').click({\n  force: true\n});\ncy.get('.ant-select-dropdown:visible').contains('.ant-select-item-option-content', 'Monitoramento').click();\n//seleciona tipo de dia\ncy.get('.ant-checkbox-group > :nth-child(1) > .ant-checkbox > .ant-checkbox-input').click({\n  force: true\n});\ncy.get(':nth-child(2) > .ant-checkbox > .ant-checkbox-input').click({\n  force: true\n});\ncy.get(':nth-child(3) > .ant-checkbox > .ant-checkbox-input').click({\n  force: true\n});\n//Seleciona itens\ncy.get(':nth-child(1) > .ant-transfer-list-header > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click();\ncy.get('.ant-transfer-operation > :nth-child(1)').click();\ncy.get('[data-testid=\"button-submit\"]').click({\n  force: true\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.ant-modal-footer > :nth-child(2)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.ant-modal-footer > :nth-child(2)`, but never found it.\n    at Context.eval (webpack://projeto-cypress-2.0/./cypress/e2e/Menu - 01 Cadastro/0113 - Grupo Linha.cy.js:9:9)",
+                "diff": null
+              },
+              "uuid": "977cde97-6da9-478b-b4c5-64dde402d2f0",
+              "parentUUID": "c2f6ff81-8e70-417d-be1c-7269d3f9adbc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "977cde97-6da9-478b-b4c5-64dde402d2f0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14427,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Relatório E2E",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
