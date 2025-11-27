@@ -26,12 +26,44 @@ describe('Acessando a página do Flits', () => {
       // Linha
 
       cy.get('#rc_select_6').click({ force: true });
+      cy.get('.ant-select-item-option-active > .ant-select-item-option-content > div').click({ force: true });
+      cy.get('[data-testid="Select-companyLineIds"] > .ant-select-clear > .anticon > svg > path').click({ force: true });
+
+      // Veículo
+
+      cy.get('[data-testid="Select-companyVehicleId"] > .ant-select-selector > .ant-select-selection-wrap > .ant-select-selection-search').click({ force: true });
+      cy.get('[style="height: 21280px; position: relative; overflow: hidden;"] > .rc-virtual-list-holder-inner > .ant-select-item-option-active > .ant-select-item-option-content > div').click({ force: true });
+
+      //Motorista
+
+      cy.get('[data-testid="Select-operatorId"] > .ant-select-selector').click({ force: true });
+      cy.get('[style="height: 44896px; position: relative; overflow: hidden;"] > .rc-virtual-list-holder-inner > .ant-select-item-option-active > .ant-select-item-option-content > div').click({ force: true });
+
+      //Sentido
+
+      cy.wait(4000);
+      cy.get('[data-testid="Select-direction"] > .ant-select-selector > .ant-select-selection-wrap > .ant-select-selection-search').click({ force: true });
+      cy.contains('Ida').click({ force: true });
+      cy.wait(4000);
+
+      //Tipo de viagem
+
+      cy.get('[data-testid="Select-tripType"] > .ant-select-selector').click({ force: true });
+      cy.contains('Realizadas').click({ force: true });
+      cy.wait(4000);
+
+      cy.get('[data-testid="Checkbox-onlyNormalTrip"]').click({ force: true });
 
       //Pesquisar e Limpar
 
       cy.get('[data-testid="button-submit"] > :nth-child(2)').click({ force: true });
       cy.wait(4000);
       cy.get('[data-testid="button-reset"]').click({ force: true });
+
+
+      cy.get('.anticon-tag').click({ force: true });
+      cy.get('[data-testid="TextArea-note"]').type('Teste de relatório de viagem', { force: true });
+      cy.get('[data-testid="button-submit"]').click({ force: true });
     
 
 

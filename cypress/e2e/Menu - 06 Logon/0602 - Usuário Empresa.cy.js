@@ -61,6 +61,7 @@ describe('Acessando a página do Flits', () => {
       cy.wait(4000);
       cy.get('[label="MobiBrasil SP (Jonathas)"] > .ant-select-item-option-content > .company-company-group-select').click({ force: true });
       cy.get('[data-testid="Select-product"] > .ant-select-selector').click({ force: true });
+      cy.wait(4000);
       cy.get('[label="GOOL System"]').click({ force: true });
       cy.get('[data-testid="Select-profile"] > .ant-select-selector').click({ force: true });
       cy.wait(4000);
@@ -68,19 +69,31 @@ describe('Acessando a página do Flits', () => {
       cy.get('[data-testid="Select-profile"] > .ant-select-selector').click({ force: true });
       cy.contains('*Comunicados*').click({ force: true });
 
-      //Incluir
+      //Incluir -> Proximo
       
       cy.get('.ant-col > div > .ant-btn > :nth-child(2)').click({ force: true });
+      cy.get(':nth-child(2) > .ant-btn-icon').click({ force: true });
       
       
+      // Descrição
 
+      cy.get('.ant-input').type('10010 - Paese', { force: true });
+      cy.get(':nth-child(2) > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click({ force: true });
+      cy.get('[style="padding-left: 5px; padding-right: 5px;"] > .ant-btn').click({ force: true });
+      cy.get('[style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"] > .ant-btn').click({ force: true });
+      cy.wait(4000);
 
-      // Incluir Visibilidade
+      //Voltar
+
+      cy.get(':nth-child(2) > .ant-col > [type="button"]').click({ force: true});
+      cy.get('[style="padding-left: 5px; padding-right: 5px; text-align: right; margin-top: 20px; padding-top: 8px; gap: 6px; display: flex; justify-content: flex-end;"] > :nth-child(1)').click({ force: true });
+      cy.wait(4000);
+
+      //Cancelar
+
+      cy.get('[data-testid="button-cancel"]').click({ force: true});
 
       
-
-
-
 
         
     });
