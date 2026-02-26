@@ -25,9 +25,9 @@ describe('Acessando a página do Flits', () => {
 
       // Download PDF e Excel
 
-      cy.get('.anticon-file-pdf').click({ force: true });
+      cy.get('.anticon-file-pdf>svg').click({ force: true });
       cy.wait(4000);
-      cy.get('.anticon-file-excel').click({ force: true });
+      cy.get('.anticon-file-excel>svg').click({ force: true });
       cy.wait(4000);
 
       // Filtrar

@@ -18,8 +18,17 @@ describe('Acessando a página do Flits', () => {
 
       cy.contains('Mapa').click({ force: true });
       cy.get('.ant-col > .ant-btn').click({ force: true });
-      
       cy.wait(4000);
+
+      cy.get('.left-top-button button:has(svg#Layer_1)', { timeout: 15000 })
+      .first()
+      .click({ force: true })
+
+      //Monitorar 
+      
+      cy.get('.sc-imWYAH > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click({ force: true });
+      cy.get('[style="height: auto;"] > .sc-jsJBEQ > .ant-form > .row-btns > .ant-col > div > [data-testid="button-submit"]').click({ force: true });
+      cy.wait(8000);
 
 
     });

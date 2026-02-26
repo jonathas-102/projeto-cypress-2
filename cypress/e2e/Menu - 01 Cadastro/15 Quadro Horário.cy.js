@@ -12,8 +12,8 @@ describe('Acessando a página do Flits', () => {
 
      //Seleciona um item do menu
   
-     cy.get('[data-testid="01"] > .sc-iAUPGz').click();
-     cy.get('[data-testid="0109"] > .sc-iAUPGz > .title').click();
+     cy.contains('Cadastro').click({ force: true });
+     cy.contains('Quadro Horário').click({ force: true });
 
      // Define as opções específicas a serem selecionadas
      //Se algum valor de texto ou valor de backend mudar no futuro, o teste irá falhar, indicando que há uma discrepância, ajudando na manutenção e atualização do sistema.
@@ -70,9 +70,9 @@ describe('Acessando a página do Flits', () => {
       cy.wait(4000);
       cy.get('[data-cy="btn-form-add"]').click({ force: true });
       cy.get('[data-testid="Input-code"]').type('U579T57');
-      cy.get('#rc_select_8').click({ force: true });
-      cy.get('.ant-select-item-option-active > .ant-select-item-option-content > div > :nth-child(1)').click({ force: true });
       cy.get('#rc_select_9').click({ force: true });
+      cy.get('.ant-select-item-option-active > .ant-select-item-option-content > div > :nth-child(1)').click({ force: true });
+      cy.get('#rc_select_10').click({ force: true });
       cy.get('[data-testid="Input-goal"]').type('E2E Cypress');
 
       //Data 

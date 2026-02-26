@@ -10,11 +10,9 @@ describe('Acessando a página do Flits', () => {
      cy.get('#rcc-confirm-button').click();
      cy.wait(4000);
 
-      // Clica no menu cadastro
+      // Clica no menu check-in tripulação
 
-      cy.get('.ant-col > .ant-btn').click({ force: true });
-      cy.get('[data-testid="16"] > .sc-iAUPGz > .title').click({ force: true });
-      cy.get('[data-testid="1601"] > .sc-iAUPGz > .title').click({ force: true });
+      cy.get('[data-testid="10"] > .sc-iAUPGz > .title').click({ force: true });
 
 
 

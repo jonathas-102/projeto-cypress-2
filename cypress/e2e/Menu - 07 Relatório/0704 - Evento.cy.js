@@ -26,6 +26,25 @@ describe('Acessando a página do Flits', () => {
       cy.get('.ant-select-item-option-content').contains('Resumo').click({ force: true });
       cy.get('#rc_select_7').click({ force: true });
       cy.get('.ant-select-item-option-content').contains('NOTURNO').click({ force: true });
+
+      //Veículo
+
+      cy.get('#rc_select_6').click({ force: true });
+      cy.get('.ant-select-item-option-content').contains('63001').click({ force: true });
+
+      //Evento
+
+      cy.get('[data-testid="MultiSelectAntd-eventIds"] > .ant-select-selector').click({ force: true });
+      cy.get('.ant-select-item-option-content').contains('Carro parado em viagem').click({ force: true });
+
+      //Login
+
+      cy.get('[data-testid="Select-login"] > .ant-select-selector').click({ force: true });
+      cy.get('.ant-select-item-option-content').contains('yasmin.mobibrasil').click({ force: true });
+
+      cy.get('.anticon-tag').click({ force: true });
+      cy.get('[data-testid="TextArea-note"]').type('Teste de relatório de evento', { force: true });
+      
       
       // Pesquisa e limpa o campo de pesquisa
 

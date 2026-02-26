@@ -13,12 +13,12 @@ describe('Acessando a página do Flits', () => {
 
       //clica no menu cadastro
 
-      cy.get('[data-testid="01"] > .sc-iAUPGz').click({ force: true });
+      cy.get('[data-testid="01"] > .sc-hHuwoJ > .title').click({ force: true });
       cy.wait(4000);
 
       // sub menu grupo linha
       
-      cy.get('[data-testid="0105"] > .sc-iAUPGz > .title').click({ force: true });
+      cy.get('[data-testid="0105"] > .sc-hHuwoJ > .title').click({ force: true });
       
       // Incluir novo grupo linha
 

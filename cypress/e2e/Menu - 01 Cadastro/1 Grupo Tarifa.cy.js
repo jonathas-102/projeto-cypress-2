@@ -12,29 +12,35 @@ describe('Acessando a página do Flits', () => {
 
       // Clica no menu cadastro
 
-      cy.get(':nth-child(4) > .ant-menu-submenu-title').click();
+      cy.get(':nth-child(1) > .ant-menu-submenu-title').click();
 
       // Clica no sub menu Escala Padrão
 
-      cy.contains('Sinótico').click({ force: true });
+      cy.contains('Grupo Tarifa').click({ force: true });
       cy.get('.ant-col > .ant-btn').click({ force: true });
       cy.wait(4000);
 
-      // Filtros
+      //Adicionar
 
-      cy.get('[data-cy="form-item-lineGroup"] > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector').click({ force: true });
+      cy.get('[data-cy="btn-form-add"]').click({ force: true });
+      cy.get('[data-testid="Input-name"]').type('Teste E2E Grupo Tarifa', { force: true });
+      cy.get('[data-testid="button-cancel"]').click({ force: true });
+
+      cy.get('[data-cy="btn-form-add"]').click({ force: true });
+      cy.get('[data-testid="Input-name"]').type('Teste E2E Grupo Tarifa', { force: true });
+
+      //Salvar
+
       cy.get('[data-testid="button-submit"]').click({ force: true });
-      cy.get('.ant-btn-icon-only').click({ force: true });
-      cy.get('[data-testid="button-reset"] > :nth-child(2)').click({ force: true });
       cy.wait(4000);
 
-      // Pesquisar
-
-      cy.get('[data-testid="button-submit"]').click({ force: true });
-      cy.wait(4000);
 
 
 
+
+
+
+      
 
         
     });

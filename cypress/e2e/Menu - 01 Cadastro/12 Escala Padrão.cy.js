@@ -31,14 +31,14 @@ describe('Acessando a página do Flits', () => {
       
       // Seleciona a data de início
 
-     cy.get('[title="2025-11-06"]')
+     cy.get('[title="2026-01-06"]')
      .should('be.visible')
      .click({ force: true });
      cy.wait(2000);
 
      // Abre o calendário do campo de data final
 
-     cy.get('[data-cy="form-item-endDate"] > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-picker > .ant-picker-input').type('11112025');
+     cy.get('[data-cy="form-item-endDate"] > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-picker > .ant-picker-input').type('08012026');
      cy.wait(2000);
 
      //Linha

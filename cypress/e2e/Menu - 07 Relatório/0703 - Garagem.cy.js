@@ -10,12 +10,13 @@ describe('Acessando a página do Flits', () => {
       //Entendido
 
       cy.get('.ant-modal-footer > :nth-child(2) > :nth-child(2)').click();
-      cy.wait(4000);
+      cy.wait(5000);
 
       // Clica no menu relatório e sub menu
 
-      cy.get('[data-testid="07"] > .sc-iAUPGz > .title').click();
-      cy.get('[data-testid="0703"] > .sc-iAUPGz > .title').click({ force: true });
+      cy.get('[data-testid="07"] > .sc-hDLGov > .title').click({ force: true });
+      cy.wait(4000);
+      cy.get('[data-testid="0703"] > .sc-hDLGov > .title').click({ force: true });
 
       // Seleciona modelo, atividade e garagem.
 
@@ -27,6 +28,21 @@ describe('Acessando a página do Flits', () => {
       
       cy.get('#rc_select_7').click({ force: true });
       cy.get('.ant-select-item-option-content').contains('Pátio Teotonio').click({ force: true });
+
+      //Garagem
+
+      cy.get('[data-testid="Select-garageId"] > .ant-select-selector > .ant-select-selection-wrap > .ant-select-selection-search').click({ force: true });
+      cy.contains('Pátio Teotonio').click({ force: true });
+      cy.wait(4000);
+
+      //Linha 
+      cy.get('[data-testid="Select-companyLineId"] > .ant-select-selector').click({ force: true });
+      cy.contains('10010 - Paese').click({ force: true });
+      cy.wait(4000);
+
+      cy.get('.anticon-tag').click({ force: true });
+      cy.get('[data-testid="TextArea-note"]').type('Teste de relatório de viagem', { force: true });
+      cy.get('[data-testid="button-submit"]').click({ force: true });
 
       //Pesquisa e Limpar       
 

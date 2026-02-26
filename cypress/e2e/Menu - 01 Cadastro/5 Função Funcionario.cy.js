@@ -10,16 +10,33 @@ describe('Acessando a página do Flits', () => {
      cy.get('#rcc-confirm-button').click();
      cy.wait(4000);
 
-      // Clica no menu check-in tripulação
+     //Seleciona um item do menu
+  
+     cy.contains('Cadastro').click({ force: true });
+     cy.contains('Função Funcionário').click({ force: true });
 
-      cy.get('[data-testid="10"] > .sc-iAUPGz > .title').click({ force: true });
+     //Adicionar
+
+     cy.get('[data-cy="btn-form-add"]').click({ force: true });
+     cy.wait(4000);
+
+     cy.get('input[name="description"]')
+     .last()
+     .clear({ force: true })
+     .type('Descrição teste', { force: true })
+
+     //Cancelar
+
+     cy.get('[data-testid="button-cancel"]').click({ force: true });
+     cy.wait(4000);
 
 
-      
 
-      
+
+
+
+
 
         
-    });
-    
+    });  
 });
